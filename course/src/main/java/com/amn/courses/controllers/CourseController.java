@@ -44,6 +44,7 @@ public class CourseController {
         Course n = new Course();
         n.setName(name);
         n.setInstructor(userRepository.findById(instructorId).get());
+        n.setDescription(json.get("description").asText());
 
         if(userRepository.findById(instructorId).isEmpty()){
             JSONObject entity = new JSONObject();

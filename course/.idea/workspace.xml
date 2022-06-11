@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/com/amn/gateway/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/com/amn/gateway/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +159,21 @@
           <url>jar://$MAVEN_REPOSITORY$/io/grpc/grpc-stub/1.16.1/grpc-stub-1.16.1-sources.jar!/io/grpc/stub/ClientCalls.java</url>
           <line>122</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
