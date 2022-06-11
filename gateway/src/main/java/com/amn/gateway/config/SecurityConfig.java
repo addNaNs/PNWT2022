@@ -67,7 +67,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                     "/course-app/user/register"
             ).permitAll()
             .pathMatchers(HttpMethod.GET).permitAll()
-            .pathMatchers(
+            .pathMatchers(HttpMethod.GET,
                     "/course-app/course",
                     "/course-app/course/[0-9]"
             ).permitAll()
