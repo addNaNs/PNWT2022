@@ -23,7 +23,7 @@ public class Course {
     private User instructor;
 
     @JsonIgnoreProperties({"courses", "instructedCourses"})
-    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.PERSIST})
+    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.REMOVE})
     Set<User> users = new HashSet<>();
 
     public Set<User> getUsers() {
