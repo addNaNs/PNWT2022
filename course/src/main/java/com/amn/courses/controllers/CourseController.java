@@ -69,6 +69,28 @@ public class CourseController {
         return courseRepository.findById(id).get();
     }
 
+    @PutMapping(path="")
+    public @ResponseBody Object updateCourse(@RequestBody Course course){
+        Course c = courseRepository.findById(course.getId()).get();
+        if(c == null){
+            JSONObject entity = new JSONObject();
+            entity.put("message","No course with that ID");
+            return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
+        }
+
+        if(course.getName() != null)
+            c.setName(course.getName());
+        if(course.getDescription() != null)
+            c.setDescription(course.getDescription());
+
+        courseRepository.save(c);
+
+        JSONObject entity = new JSONObject();
+        entity.put("message","Updated");
+        return new ResponseEntity<Object>(entity,HttpStatus.OK);
+    }
+
+
     @DeleteMapping(path="{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<Object> deleteCourse(@PathVariable(value="id") Integer id) {
 
