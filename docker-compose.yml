@@ -1,0 +1,88 @@
+version: '3'
+
+services:
+
+    rabbitmq:
+        container_name: rabbitmq
+        hostname: rabbitmq
+        image: rabbitmq:3.9-management
+        ports:
+            - 5672:5672
+            - 15672:15672
+
+    course-service-db:
+        container_name: course-service-db
+        hostname: course-service-db
+        image: mysql:8.0
+        
+        environment:
+            MYSQL_ROOT_PASSWORD: sifra123
+            MYSQL_DATABASE: db_course
+            MYSQL_USER: user
+            MYSQL_PASSWORD: sifra123
+
+       
+
+    quiz-service-db:
+        container_name: quiz-service-db
+        hostname: quiz-service-db
+        image: mysql:8.0
+        
+        environment:
+            MYSQL_ROOT_PASSWORD: sifra123
+            MYSQL_DATABASE: db_quiz
+            MYSQL_USER: user
+            MYSQL_PASSWORD: sifra123
+
+    eureka:
+        container_name: eureka
+        hostname: discovery-server
+        build:
+            context: ./eureka/
+            dockerfile: Dockerfile
+        image: sha256:808b6234b6473f8c22a67d5422dcb225ad3980a6f0294a83835352c34281d87a
+        restart: on-failure
+        expose:
+            - 8761
+        ports:
+            - 8761:8761
+
+
+
+    course:
+        container_name: course
+        build:
+            context: ./course/
+            dockerfile: Dockerfile
+        image: sha256:c9d8c7a952e961f7c610bb18337193ea250bcef362c9bea85c028930dade6889
+        restart: on-failure
+        environment:
+            - COURSE_DB_URL=jdbc:mysql://course-service-db:3306/db_course?allowPublicKeyRetrieval=true&useSSL=false
+            - EUREKA_SERVER_URL=http://discovery-server:8761/eureka
+            - SPRING_RABBITMQ_HOST=rabbitmq
+        expose:
+            - 8080
+        ports:
+            - 8080:8080
+        depends_on:
+            - eureka
+            - rabbitmq
+
+    quiz:
+        container_name: quiz
+        build:
+            context: ./quiz/
+            dockerfile: Dockerfile
+        image: sha256:bc0321072893a5e00efb3b874c72657c2a5e6279bd69179df17990023b07f57d
+        restart: on-failure
+        environment:
+            - UQUIZ_DB_URL=jdbc:mysql://quiz-service-db:3306/db_quiz?allowPublicKeyRetrieval=true&useSSL=false
+            - EUREKA_SERVER_URL=http://discovery-server:8761/eureka
+        expose:
+            - 8081
+        ports:
+            - 8081:8081
+        depends_on:
+            - rabbitmq
+            - eureka
+

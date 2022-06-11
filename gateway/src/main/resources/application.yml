@@ -1,0 +1,45 @@
+server:
+  port: 8070
+
+spring:
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: course-app
+          uri: lb://course-app
+          predicates:
+            - Path=/course-app/**
+          filters:
+            - StripPrefix=1
+
+        - id: quiz-app
+          uri: lb://quiz-app
+          predicates:
+            - Path=/quiz-app/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+springbootwebfluxjjwt:
+  password:
+    encoder:
+      secret: mysecret
+      iteration: 33
+      keylength: 256
+
+jjwt:
+  security:
+    key: ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave64ByteLength
+  token:
+    validity: 28800
