@@ -68,7 +68,8 @@ public class SecurityConfig implements WebMvcConfigurer {
             ).permitAll()
             .pathMatchers(HttpMethod.GET).permitAll()
             .pathMatchers(
-                    "/course-app/course"
+                    "/course-app/course",
+                    "/course-app/course/[0-9]"
             ).permitAll()
             .anyExchange().authenticated()
             .and();
