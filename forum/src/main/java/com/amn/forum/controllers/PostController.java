@@ -12,7 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
+import java.util.List;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping(path = "/post")
@@ -44,6 +45,18 @@ public class PostController {
     @GetMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     private @ResponseBody Post getPost(@PathVariable(value="id") Integer id){
         return postRepository.findById(id).get();
+    }
+
+    @GetMapping(path="course/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    private @ResponseBody Iterable<Post> getPostByCourse(@PathVariable(value="id") Integer id){
+        Iterable<Post> posts = postRepository.findAll();
+        List<Post> result = new ArrayList<>();
+        for (Post p: posts) {
+            if(p.getCourseId() == id){
+                result.add(p);
+            }
+        }
+        return result;
     }
 
     @DeleteMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
