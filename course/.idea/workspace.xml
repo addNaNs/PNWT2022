@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses.iml" beforeDir="false" afterPath="$PROJECT_DIR$/courses.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +77,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "spring.configuration.checksum": "0dfcce752715c464ccdae8b2acc9e348"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0dfcce752715c464ccdae8b2acc9e348&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.CoursesApplication">
     <configuration name="CoursesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.amn.courses.CoursesApplication" />
@@ -128,7 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649250671892</updated>
-      <workItem from="1655045699236" duration="883000" />
+      <workItem from="1655045699236" duration="1553000" />
     </task>
     <task id="LOCAL-00001" summary="komit">
       <created>1649250767132</created>

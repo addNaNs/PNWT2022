@@ -13,6 +13,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping(path = "reply")
 public class ReplyController {
@@ -47,6 +50,18 @@ public class ReplyController {
     @GetMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     private @ResponseBody Reply getReply(@PathVariable(value="id") Integer id){
         return replyRepository.findById(id).get();
+    }
+
+    @GetMapping(path="post/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    private @ResponseBody Iterable<Reply> getRepliesByPost(@PathVariable(value="id") Integer id){
+        Iterable<Reply> replies = replyRepository.findAll();
+        List<Reply> result = new ArrayList<>();
+        for (Reply r: replies) {
+            if(r.getPost().getId() == id){
+                result.add(r);
+            }
+        }
+        return result;
     }
 
     @DeleteMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
