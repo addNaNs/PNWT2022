@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses.iml" beforeDir="false" afterPath="$PROJECT_DIR$/courses.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +77,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "spring.configuration.checksum": "0dfcce752715c464ccdae8b2acc9e348"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.CoursesApplication">
     <configuration name="CoursesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.amn.courses.CoursesApplication" />
@@ -97,6 +95,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoursesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="courses" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.amn.courses.CoursesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,6 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649250671892</updated>
+      <workItem from="1655045699236" duration="883000" />
     </task>
     <task id="LOCAL-00001" summary="komit">
       <created>1649250767132</created>
@@ -140,6 +146,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
