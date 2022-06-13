@@ -26,6 +26,9 @@ public class Course {
     @ManyToMany(mappedBy = "courses", cascade = {CascadeType.REMOVE})
     Set<User> users = new HashSet<>();
 
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Lesson> lessons;
+
     public Set<User> getUsers() {
         return users;
     }
@@ -72,5 +75,13 @@ public class Course {
 
     public void setInstructor(User instructor) {
         this.instructor = instructor;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
     }
 }
