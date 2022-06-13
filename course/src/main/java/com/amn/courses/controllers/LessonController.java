@@ -94,7 +94,7 @@ public class LessonController {
             lesson.setText(updatedLesson.getText());
         if(updatedLesson.getCourse() != null)
             lesson.setCourse(updatedLesson.getCourse());
-        
+
         lessonRepository.save(lesson);
 
         JSONObject entity = new JSONObject();
