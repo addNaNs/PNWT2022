@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" afterDir="false" />
-    </list>
+    <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
