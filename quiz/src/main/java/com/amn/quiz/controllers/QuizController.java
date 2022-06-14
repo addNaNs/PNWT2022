@@ -83,7 +83,7 @@ public class QuizController {
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
-    @PostMapping(path="attempt/{id}")
+    @GetMapping(path="attempt/{id}")
     public @ResponseBody ResponseEntity<Object> attemptQuiz(@PathVariable(value="id") Integer id) {
         Quiz quiz = quizRepository.findById(id).get();
 
