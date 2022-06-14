@@ -1,10 +1,12 @@
 package com.amn.quiz.controllers;
 
+import com.amn.quiz.dto.AttemptRepository;
 import com.amn.quiz.dto.QuestionRepository;
 import com.amn.quiz.dto.QuizRepository;
 import com.amn.quiz.models.Question;
 import com.amn.quiz.models.Quiz;
 import com.amn.quiz.models.Attempt;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,9 @@ public class QuizController {
 
     @Autowired
     private QuestionRepository questionRepository;
+
+    @Autowired
+    private AttemptRepository attemptRepository;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -103,5 +108,28 @@ public class QuizController {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("questions", result);
         return new ResponseEntity<Object>(jsonObject, HttpStatus.OK);
+    }
+
+
+    @PostMapping(path="attempt")
+    public @ResponseBody ResponseEntity<Object> attemptQuizResults(@RequestBody ObjectNode json) {
+        Attempt attempt = new Attempt();
+        try{
+            attempt.setQuiz(quizRepository.findById(json.get("quiz_id").asInt()).get());
+            attempt.setPoints(json.get("points").asInt());
+            attempt.setUser_id(json.get("user_id").asInt());
+            attemptRepository.save(attempt);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+            JSONObject entity = new JSONObject();
+            entity.put("message","Bad request body");
+            return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
+        }
+
+
+        JSONObject entity = new JSONObject();
+        entity.put("message","Saved");
+        return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 }
