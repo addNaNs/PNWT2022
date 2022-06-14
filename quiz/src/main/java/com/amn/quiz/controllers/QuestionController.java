@@ -15,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping(path = "/question")
 public class QuestionController {
@@ -52,6 +55,21 @@ public class QuestionController {
     @GetMapping(path="{id}")
     public @ResponseBody Question getQuestion(@PathVariable(value="id") Integer id) {
         return questionRepository.findById(id).get();
+    }
+
+    @GetMapping(path="course/{id}")
+    public @ResponseBody Iterable<Question> getQuizzesByCourse(@PathVariable(value="id") Integer id) {
+        Iterable<Question> allQuestions = questionRepository.findAll();
+        List<Question> filteredQuestions = new ArrayList<>();
+        for (Question question : allQuestions) {
+            if(question.getQuiz() == null){
+                continue;
+            }
+            if(question.getQuiz().getId() == id){
+                filteredQuestions.add(question);
+            }
+        }
+        return filteredQuestions;
     }
 
     @DeleteMapping(path="{id}", produces= MediaType.APPLICATION_JSON_VALUE)
