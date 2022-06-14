@@ -2,8 +2,7 @@ package com.amn.quiz.controllers;
 
 import com.amn.quiz.dto.QuizRepository;
 import com.amn.quiz.models.Quiz;
-import com.amn.quiz.models.Score;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.amn.quiz.models.Attempt;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,9 +43,15 @@ public class QuizController {
     }
 
     @GetMapping(path="")
-    public @ResponseBody Iterable<Quiz> getAllUsers() {
+    public @ResponseBody Iterable<Quiz> getAllQuizzes() {
         return quizRepository.findAll();
     }
+
+    @GetMapping(path="{id}")
+    public @ResponseBody Quiz getQuiz(@PathVariable(value="id") Integer id) {
+        return quizRepository.findById(id).get();
+    }
+
 
     @DeleteMapping(path="{id}", produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<Object> deleteQuiz(@PathVariable(value="id") Integer id) {
@@ -55,21 +60,4 @@ public class QuizController {
         entity.put("message","Deleted");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
-
-    //*
-    @PostMapping(path = "/attempt/{quiz_id}/{user_id}")
-    public @ResponseBody ResponseEntity<Object> attemptQuiz(
-            @PathVariable(value="quiz_id") Integer quiz_id,
-            @PathVariable(value="user_id") Integer user_id,
-            @RequestBody JSONObject body
-    ){
-        Quiz quiz = quizRepository.findById(quiz_id).get();
-        Integer course_id = quiz.getCourse_id();
-        Score score = new Score();
-        score.setQuiz(quiz);
-        score.setUser_id(user_id);
-        score.setPoints((Integer) body.get("points"));
-        return new ResponseEntity<Object>(score, HttpStatus.OK);
-    }
-     //*/
 }

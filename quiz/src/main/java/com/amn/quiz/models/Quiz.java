@@ -1,5 +1,7 @@
 package com.amn.quiz.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -11,11 +13,14 @@ public class Quiz {
 
     private String title;
     private Integer course_id;
-    private Integer max_points;
-    private Double pass_percent;
+    private Integer nQuestion;
 
     @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
-    private Set<Score> scores;
+    private Set<Attempt> attempts;
+
+    @JsonIgnoreProperties({"questions", "attempts"})
+    @OneToMany(mappedBy = "quiz")
+    private Set<Question> questions;
 
     public Quiz() {
     }
@@ -44,27 +49,19 @@ public class Quiz {
         this.course_id = course_id;
     }
 
-    public Integer getMax_points() {
-        return max_points;
+    public Integer getNQuestion() {
+        return nQuestion;
     }
 
-    public void setMax_points(Integer max_points) {
-        this.max_points = max_points;
+    public void setNQuestion(Integer nQuestion) {
+        this.nQuestion = nQuestion;
     }
 
-    public Double getPass_percent() {
-        return pass_percent;
+    public Set<Attempt> getScores() {
+        return attempts;
     }
 
-    public void setPass_percent(Double pass_percent) {
-        this.pass_percent = pass_percent;
-    }
-
-    public Set<Score> getScores() {
-        return scores;
-    }
-
-    public void setScores(Set<Score> scores) {
-        this.scores = scores;
+    public void setScores(Set<Attempt> attempts) {
+        this.attempts = attempts;
     }
 }
