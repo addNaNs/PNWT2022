@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/AttemptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/dto/AttemptRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/dto/QuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Attempt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +64,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -77,14 +85,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;0dfcce752715c464ccdae8b2acc9e348&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quiz" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+  </component>
   <component name="RunManager" selected="Application.CoursesApplication">
     <configuration name="CoursesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.amn.courses.CoursesApplication" />

@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-public class Score {
+public class Attempt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @JsonIgnoreProperties({"instances"})
+    @JsonIgnoreProperties({"questions", "attempts"})
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "quiz_id")
     private Quiz quiz;
@@ -18,9 +18,8 @@ public class Score {
     private Integer user_id;
 
     private Integer points;
-    private boolean passed;
 
-    public Score() {
+    public Attempt() {
     }
 
     public Integer getId() {
@@ -53,26 +52,5 @@ public class Score {
 
     public void setPoints(Integer points) {
         this.points = points;
-        if(points >= quiz.getMax_points() * quiz.getPass_percent()){
-            this.passed = true;
-        } else {
-            this.passed = false;
-        }
-    }
-
-    public boolean isPassed() {
-        return passed;
-    }
-
-    public void setPassed(boolean passed) {
-        this.passed = passed;
-        if(this.points >= quiz.getMax_points() * quiz.getPass_percent()){
-            this.passed = true;
-        } else {
-            this.passed = false;
-        }
-        if(passed != this.passed){
-            throw new RuntimeException("Pass criteria not met");
-        }
     }
 }
