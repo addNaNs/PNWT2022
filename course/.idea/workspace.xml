@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
       <change afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/misc/JWTUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -12,6 +13,9 @@
       <change beforePath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../forum/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/resources/application.properties" afterDir="false" />
     </list>
+=======
+    <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit" />
+>>>>>>> e2032bd21e6cf2d5eab09c7dbed7e0f610dd844d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,16 +42,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/UserController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/CoursesApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/util/RabbitConfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/CoursesApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/UserController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/util/RabbitConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -82,16 +86,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quiz" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "spring.configuration.checksum": "0dfcce752715c464ccdae8b2acc9e348"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.CoursesApplication">
     <configuration name="CoursesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.amn.courses.CoursesApplication" />
@@ -102,6 +102,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoursesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="courses" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.amn.courses.CoursesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,7 +124,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.CoursesApplication" />
-        <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +135,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649250671892</updated>
+      <workItem from="1655045699236" duration="4226000" />
+      <workItem from="1655326001177" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="komit">
       <created>1649250767132</created>
@@ -146,6 +154,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
