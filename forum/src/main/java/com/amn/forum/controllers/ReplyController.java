@@ -2,9 +2,11 @@ package com.amn.forum.controllers;
 
 import com.amn.forum.dto.PostRepository;
 import com.amn.forum.dto.ReplyRepository;
+import com.amn.forum.misc.JWTUtil;
 import com.amn.forum.models.Post;
 import com.amn.forum.models.Reply;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import io.jsonwebtoken.Claims;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,14 +28,26 @@ public class ReplyController {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private JWTUtil jwtUtil;
+
     @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
     private @ResponseBody
-    ResponseEntity<Object> addReply(@RequestBody ObjectNode body){
+    ResponseEntity<Object> addReply(
+            @RequestHeader(name="Authorization", required = false) String auth,
+            @RequestBody ObjectNode body
+    ){
 
         Reply r = new Reply();
-        r.setUserId(body.get("user_id").asInt());
         r.setPost(postRepository.findById(body.get("post_id").asInt()).get());
         r.setText(body.get("text").asText());
+
+        if(body.get("user_id") == null){
+            r.setUserId(body.get("user_id").asInt());
+        } else {
+            Claims x = jwtUtil.getAllClaimsFromToken(auth.split(" ")[1]);
+            r.setUserId((Integer) x.get("user_id"));
+        }
 
         replyRepository.save(r);
 
@@ -74,13 +88,21 @@ public class ReplyController {
     }
 
     @PutMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    private @ResponseBody ResponseEntity<Object> updateReply(@RequestBody ObjectNode body){
-
+    private @ResponseBody ResponseEntity<Object> updateReply(
+            @RequestHeader(name="Authorization", required = false) String auth,
+            @RequestBody ObjectNode body
+    ){
         Reply r = new Reply();
 
         if(body.get("post_id") == null) r.setPost(postRepository.findById(body.get("post_id").asInt()).get());
         if(body.get("text") == null) r.setText(body.get("text").asText());
-        if(body.get("user_id") == null) r.setUserId(body.get("user_id").asInt());
+
+        if(body.get("user_id") == null){
+            r.setUserId(body.get("user_id").asInt());
+        } else {
+            Claims x = jwtUtil.getAllClaimsFromToken(auth.split(" ")[1]);
+            r.setUserId((Integer) x.get("user_id"));
+        }
 
         replyRepository.save(r);
 
