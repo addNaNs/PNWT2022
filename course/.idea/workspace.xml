@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649250671892</updated>
-      <workItem from="1655045699236" duration="4159000" />
+      <workItem from="1655045699236" duration="4226000" />
     </task>
     <task id="LOCAL-00001" summary="komit">
       <created>1649250767132</created>
