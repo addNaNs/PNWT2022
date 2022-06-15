@@ -97,7 +97,7 @@ public class CourseController {
         QuizMessage quizMessage = new QuizMessage();
         quizMessage.setCourse_id(id);
         quizMessage.setSuccess(true);
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, RabbitConfig.ROUTING_KEY, quizMessage);
+        var x = rabbitTemplate.convertSendAndReceive(RabbitConfig.EXCHANGE, RabbitConfig.ROUTING_KEY, quizMessage);
         courseRepository.deleteById(id);
         JSONObject entity = new JSONObject();
         entity.put("message","Deleted");

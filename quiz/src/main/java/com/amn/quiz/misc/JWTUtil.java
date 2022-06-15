@@ -1,8 +1,5 @@
-package com.amn.courses.misc;
+package com.amn.quiz.misc;
 
-
-import com.amn.courses.models.Role;
-import com.amn.courses.models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -48,16 +45,6 @@ public class JWTUtil {
     private Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
         return expiration.before(new Date());
-    }
-
-    public String generateToken(User user) {
-        Map<String, Object> claims = new HashMap<>();
-        List<Role> roles =new ArrayList<Role>() { };
-        roles.add(Role.USER);
-        claims.put("role", roles);
-        claims.put("user_id", user.getId());
-
-        return doGenerateToken(claims, user.getUsername());
     }
 
     private String doGenerateToken(Map<String, Object> claims, String username) {

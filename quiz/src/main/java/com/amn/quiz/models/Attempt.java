@@ -11,8 +11,7 @@ public class Attempt {
     private Integer id;
 
     @JsonIgnoreProperties({"questions", "attempts"})
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "quiz_id")
+    @ManyToOne
     private Quiz quiz;
 
     private Integer user_id;
@@ -53,4 +52,6 @@ public class Attempt {
     public void setPoints(Integer points) {
         this.points = points;
     }
+
+
 }

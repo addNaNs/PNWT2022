@@ -3,6 +3,7 @@ package com.amn.quiz.util.consumer;
 import com.amn.quiz.dto.QuizRepository;
 import com.amn.quiz.models.Quiz;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,9 @@ public class QuizConsumer {
     @Autowired
     private QuizRepository quizRepository;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     @RabbitListener(queues = "quiz-queue")
     public void consumeMessageFromQueue(QuizMessage courseMessage){
         System.out.println("Message received from queue "+courseMessage.getCourse_id());
@@ -26,5 +30,7 @@ public class QuizConsumer {
             }
         });
         forDelete.forEach(el -> quizRepository.deleteById(el));
+
+
     }
 }

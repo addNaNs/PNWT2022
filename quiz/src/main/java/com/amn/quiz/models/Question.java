@@ -1,5 +1,9 @@
 package com.amn.quiz.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,7 +19,8 @@ public class Question {
     private String wrongAnswer1;
     private String wrongAnswer2;
     private String wrongAnswer3;
-
+    
+    @JsonIgnoreProperties({"questions", "attempts"})
     @ManyToOne
     private Quiz quiz;
 
