@@ -3,11 +3,13 @@ package com.amn.courses.controllers;
 import com.amn.courses.dto.CourseRepository;
 import com.amn.courses.dto.UserRepository;
 import com.amn.courses.grpc.GrpcClient;
+import com.amn.courses.misc.JWTUtil;
 import com.amn.courses.models.Course;
 import com.amn.courses.models.User;
 import com.amn.courses.util.QuizMessage;
 import com.amn.courses.util.RabbitConfig;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import io.jsonwebtoken.Claims;
 import net.minidev.json.JSONObject;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +32,22 @@ public class CourseController {
     private UserRepository userRepository;
     @Autowired
     private RabbitTemplate rabbitTemplate;
+    @Autowired
+    private JWTUtil jwtUtil;
 
     @PostMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<Object> addNewCourse (@RequestBody ObjectNode json) {
+    public @ResponseBody ResponseEntity<Object> addNewCourse (
+            @RequestHeader(name="Authorization", required = false) String auth,
+            @RequestBody ObjectNode json
+    ) {
         String name = json.get("name").asText();
-        Integer instructorId = json.get("instructorId").asInt();
+        Integer instructorId;
+        if(json.get("instructorId") != null){
+            instructorId = json.get("instructorId").asInt();
+        } else {
+            Claims x = jwtUtil.getAllClaimsFromToken(auth.split(" ")[1]);
+            instructorId = (Integer) x.get("user_id");
+        }
 
         if(userRepository.findById(instructorId).isEmpty()){
             JSONObject entity = new JSONObject();
@@ -105,8 +118,17 @@ public class CourseController {
     }
 
     @PostMapping(path = "/enroll", produces= MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody ResponseEntity<Object> enrollToCourse(@RequestBody ObjectNode json){
-        Integer user_id = json.get("user_id").asInt();
+    public @ResponseBody ResponseEntity<Object> enrollToCourse(
+            @RequestHeader(name="Authorization", required = false) String auth,
+            @RequestBody ObjectNode json
+    ){
+        Integer user_id = null;
+        if(json.get("user_id") != null){
+            user_id = json.get("user_id").asInt();
+        } else {
+            Claims x = jwtUtil.getAllClaimsFromToken(auth.split(" ")[1]);
+            user_id = (Integer) x.get("user_id");
+        }
         Integer course_id = json.get("course_id").asInt();
         Optional<User> u = userRepository.findById(user_id).stream().findFirst();
         User user;
