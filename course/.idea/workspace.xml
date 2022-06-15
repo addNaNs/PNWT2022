@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
+      <change afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/misc/JWTUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/controllers/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Attempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/util/consumer/QuizConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/util/consumer/QuizConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +188,11 @@
           <url>jar://$MAVEN_REPOSITORY$/io/grpc/grpc-stub/1.16.1/grpc-stub-1.16.1-sources.jar!/io/grpc/stub/ClientCalls.java</url>
           <line>122</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

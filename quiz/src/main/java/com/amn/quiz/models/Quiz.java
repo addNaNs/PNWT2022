@@ -15,12 +15,13 @@ public class Quiz {
     private Integer course_id;
     private Integer nQuestion;
 
+
     @JsonIgnoreProperties({"quiz"})
     @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
     private Set<Attempt> attempts;
 
     @JsonIgnoreProperties({"quiz"})
-    @OneToMany(mappedBy = "quiz")
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
     private Set<Question> questions;
 
     public Quiz() {
@@ -56,14 +57,6 @@ public class Quiz {
 
     public void setNQuestion(Integer nQuestion) {
         this.nQuestion = nQuestion;
-    }
-
-    public Set<Attempt> getScores() {
-        return attempts;
-    }
-
-    public void setScores(Set<Attempt> attempts) {
-        this.attempts = attempts;
     }
 
     public Integer getnQuestion() {

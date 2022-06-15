@@ -57,7 +57,7 @@ public class QuestionController {
         return questionRepository.findById(id).get();
     }
 
-    @GetMapping(path="course/{id}")
+    @GetMapping(path="quiz/{id}")
     public @ResponseBody Iterable<Question> getQuizzesByCourse(@PathVariable(value="id") Integer id) {
         Iterable<Question> allQuestions = questionRepository.findAll();
         List<Question> filteredQuestions = new ArrayList<>();

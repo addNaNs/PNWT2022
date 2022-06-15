@@ -1,10 +1,13 @@
 package com.amn.quiz.controllers;
 
+import com.amn.quiz.dto.AttemptRepository;
 import com.amn.quiz.dto.QuestionRepository;
 import com.amn.quiz.dto.QuizRepository;
+import com.amn.quiz.misc.JWTUtil;
 import com.amn.quiz.models.Question;
 import com.amn.quiz.models.Quiz;
 import com.amn.quiz.models.Attempt;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +34,13 @@ public class QuizController {
     private QuestionRepository questionRepository;
 
     @Autowired
+    private AttemptRepository attemptRepository;
+
+    @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private JWTUtil jwtUtil;
 
     @PostMapping(path = "")
     public @ResponseBody ResponseEntity<Object> addNewQuiz(@RequestBody Quiz quiz){
@@ -59,7 +68,8 @@ public class QuizController {
 
     @GetMapping(path="{id}")
     public @ResponseBody Quiz getQuiz(@PathVariable(value="id") Integer id) {
-        return quizRepository.findById(id).get();
+        var x = quizRepository.findById(id).get();
+        return x;
     }
 
     @GetMapping(path="course/{id}")
@@ -103,5 +113,37 @@ public class QuizController {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("questions", result);
         return new ResponseEntity<Object>(jsonObject, HttpStatus.OK);
+    }
+
+
+    @PostMapping(path="attempt")
+    public @ResponseBody ResponseEntity<Object> attemptQuizResults(
+            @RequestHeader(name="Authorization", required = false) String auth,
+            @RequestBody ObjectNode json
+    ) {
+
+        var x =jwtUtil.getAllClaimsFromToken(auth.split(" ")[1]);
+        Attempt attempt = new Attempt();
+        try{
+            attempt.setQuiz(quizRepository.findById(json.get("quiz_id").asInt()).get());
+            attempt.setPoints(json.get("points").asInt());
+            if(json.get("user_id") != null){
+                attempt.setUser_id(json.get("user_id").asInt());
+            } else {
+                attempt.setUser_id((Integer) x.get("user_id"));
+            }
+            attemptRepository.save(attempt);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+            JSONObject entity = new JSONObject();
+            entity.put("message","Bad request body");
+            return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
+        }
+
+
+        JSONObject entity = new JSONObject();
+        entity.put("message","Saved");
+        return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 }
