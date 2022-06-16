@@ -1,6 +1,7 @@
 package com.amn.courses.controllers;
 
 import com.amn.courses.dto.UserRepository;
+import com.amn.courses.grpc.GrpcClient;
 import com.amn.courses.misc.JWTUtil;
 import com.amn.courses.models.User;
 import net.minidev.json.JSONObject;
@@ -32,6 +33,7 @@ public class UserController {
             if(u.getUsername().equals(user.getUsername())){
                 JSONObject entity = new JSONObject();
                 entity.put("message","No double usernames");
+                GrpcClient.log("User", "Create", "Fail");
                 return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
             }
         }
@@ -39,12 +41,14 @@ public class UserController {
         userRepository.save(user);
         JSONObject entity = new JSONObject();
         entity.put("message","Saved");
+        GrpcClient.log("User", "Create", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
     @GetMapping(path="")
     public @ResponseBody Iterable<User> getAllUsers() {
         // This returns a JSON or XML with the users
+        GrpcClient.log("User", "Get all", "Success");
         return userRepository.findAll();
     }
 
@@ -56,9 +60,11 @@ public class UserController {
         if(user.isEmpty()) {
             JSONObject entity = new JSONObject();
             entity.put("message","Not Found");
+            GrpcClient.log("User", "Get single", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.NOT_FOUND);
         }
         else {
+            GrpcClient.log("User", "Get single", "Success");
             return ResponseEntity.ok(user);
         }
     }
@@ -68,6 +74,7 @@ public class UserController {
         userRepository.deleteById(id);
         JSONObject entity = new JSONObject();
         entity.put("message","Deleted");
+        GrpcClient.log("User", "Delete", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
@@ -80,6 +87,7 @@ public class UserController {
                     JSONObject entity = new JSONObject();
                     entity.put("token",jwtUtil.generateToken(u));
                     entity.put("user", u);
+                    GrpcClient.log("User", "Login", "Success");
                     return ResponseEntity.ok(entity);
                 } else {
                     break;
@@ -89,6 +97,7 @@ public class UserController {
 
         JSONObject entity = new JSONObject();
         entity.put("message","Wrong username/password combination");
+        GrpcClient.log("User", "Login", "Fail");
         return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
     }
 
@@ -101,6 +110,7 @@ public class UserController {
             if(u.getUsername().equals(user.getUsername())){
                 JSONObject entity = new JSONObject();
                 entity.put("message","No double usernames");
+                GrpcClient.log("User", "Register", "Fail");
                 return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
             }
         }
@@ -108,6 +118,7 @@ public class UserController {
         userRepository.save(user);
         JSONObject entity = new JSONObject();
         entity.put("message","Saved");
+        GrpcClient.log("User", "Register", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 }

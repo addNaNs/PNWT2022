@@ -18,7 +18,7 @@ public class Lesson {
     private String text;
 
     @JsonIgnoreProperties({"lessons"})
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "course_id")
     private Course course;
 

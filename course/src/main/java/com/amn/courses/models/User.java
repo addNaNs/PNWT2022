@@ -27,7 +27,7 @@ public class User {
 
     @JsonIgnoreProperties({"users"})
     @ManyToMany(cascade = {
-            CascadeType.REMOVE
+            CascadeType.ALL
     }, fetch = FetchType.LAZY)
     @JoinTable(
             name = "enrollment",
@@ -40,7 +40,7 @@ public class User {
     )
     Set<Course> courses = new HashSet<>();
 
-    @OneToMany(mappedBy = "instructor", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "instructor", fetch = FetchType.LAZY, orphanRemoval = true, cascade = {CascadeType.ALL})
     private Set<Course> InstructedCourses;
 
     public User(Integer id, String name, String username, String email, String password) {

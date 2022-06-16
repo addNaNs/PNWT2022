@@ -18,15 +18,15 @@ public class Course {
     private String description;
 
     @JsonIgnoreProperties({"courses", "instructedCourses"})
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "instructor_id")
     private User instructor;
 
     @JsonIgnoreProperties({"courses", "instructedCourses"})
-    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.REMOVE})
+    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.ALL})
     Set<User> users = new HashSet<>();
 
-    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY, orphanRemoval = true, cascade = {CascadeType.ALL})
     private Set<Lesson> lessons;
 
     public Set<User> getUsers() {

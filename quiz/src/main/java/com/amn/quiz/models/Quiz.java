@@ -17,11 +17,11 @@ public class Quiz {
 
 
     @JsonIgnoreProperties({"quiz"})
-    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private Set<Attempt> attempts;
 
     @JsonIgnoreProperties({"quiz"})
-    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private Set<Question> questions;
 
     public Quiz() {

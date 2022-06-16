@@ -5,8 +5,10 @@ import com.amn.grpc.LogRequest;
 import com.amn.grpc.eventGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import org.apache.tomcat.jni.Time;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.TimeZone;
 
 public class GrpcClient {
@@ -31,11 +33,8 @@ public class GrpcClient {
 
     public static void log(String resource, String action, String status){
         eventGrpc.eventBlockingStub eventStub = eventGrpc.newBlockingStub(channel);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         LogRequest logRequest = LogRequest.newBuilder()
-                .setTimestamp(sdf.toPattern())
+                .setTimestamp(String.valueOf(LocalDateTime.now()))
                 .setResource(resource)
                 .setAction(action)
                 .setStatus(status)

@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit">
-      <change afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/misc/JWTUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/java/com/amn/forum/controllers/ReplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../forum/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/LessonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/grpc/GrpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/grpc/GrpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quiz/src/main/java/com/amn/quiz/models/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system-events/target/classes/event.proto" beforeDir="false" />
     </list>
-=======
-    <list default="true" id="8a07764f-b8c3-4fb4-a0a0-f8a818849363" name="Changes" comment="komit" />
->>>>>>> e2032bd21e6cf2d5eab09c7dbed7e0f610dd844d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,16 +45,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/CoursesApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/UserController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/util/RabbitConfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/CoursesApplication.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/util/RabbitConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/models/User.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/misc/JWTUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/amn/courses/controllers/CourseController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -65,7 +68,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -86,12 +89,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "spring.configuration.checksum": "0dfcce752715c464ccdae8b2acc9e348"
-  }
-}]]></component>
   <component name="RunManager" selected="Application.CoursesApplication">
     <configuration name="CoursesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.amn.courses.CoursesApplication" />

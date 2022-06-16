@@ -3,6 +3,7 @@ package com.amn.quiz.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 

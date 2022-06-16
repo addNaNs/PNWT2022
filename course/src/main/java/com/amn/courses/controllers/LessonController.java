@@ -37,6 +37,7 @@ public class LessonController {
         if(courseId == null || courseRepository.findById(courseId).isEmpty()){
             JSONObject entity = new JSONObject();
             entity.put("message","No course with that ID");
+            GrpcClient.log("Lesson", "Create", "Fail");
             return new ResponseEntity<Object>(entity, HttpStatus.BAD_REQUEST);
         }
         Course course = courseRepository.findById(courseId).get();
@@ -49,11 +50,13 @@ public class LessonController {
         lessonRepository.save(lesson);
         JSONObject entity = new JSONObject();
         entity.put("message","Saved");
+        GrpcClient.log("Lesson", "Create", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
     @GetMapping(path="")
     public @ResponseBody Iterable<Lesson> getAllLessons() {
+        GrpcClient.log("Lesson", "Get all", "Success");
         return lessonRepository.findAll();
     }
 
@@ -64,9 +67,11 @@ public class LessonController {
         if(lesson.isEmpty()) {
             JSONObject entity = new JSONObject();
             entity.put("message","Not Found");
+            GrpcClient.log("Lesson", "Get single", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.NOT_FOUND);
         }
         else {
+            GrpcClient.log("Lesson", "Get single", "Success");
             return ResponseEntity.ok(lesson);
         }
     }
@@ -76,6 +81,7 @@ public class LessonController {
         lessonRepository.deleteById(id);
         JSONObject entity = new JSONObject();
         entity.put("message","Deleted");
+        GrpcClient.log("Lesson", "Delete", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
@@ -85,6 +91,7 @@ public class LessonController {
         if(lesson == null){
             JSONObject entity = new JSONObject();
             entity.put("message","No lesson with that ID");
+            GrpcClient.log("Lesson", "Update", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
 
@@ -99,6 +106,7 @@ public class LessonController {
 
         JSONObject entity = new JSONObject();
         entity.put("message","Updated");
+        GrpcClient.log("Lesson", "Update", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 }

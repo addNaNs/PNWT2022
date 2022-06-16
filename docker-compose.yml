@@ -14,25 +14,15 @@ services:
         container_name: course-service-db
         hostname: course-service-db
         image: mysql:8.0
+
+        ports:
+            - "33061:3306"
         
         environment:
             MYSQL_ROOT_PASSWORD: sifra123
-            MYSQL_DATABASE: db_course
             MYSQL_USER: user
             MYSQL_PASSWORD: sifra123
 
-       
-
-    quiz-service-db:
-        container_name: quiz-service-db
-        hostname: quiz-service-db
-        image: mysql:8.0
-        
-        environment:
-            MYSQL_ROOT_PASSWORD: sifra123
-            MYSQL_DATABASE: db_quiz
-            MYSQL_USER: user
-            MYSQL_PASSWORD: sifra123
 
     eureka:
         container_name: eureka
@@ -57,7 +47,7 @@ services:
         image: sha256:c9d8c7a952e961f7c610bb18337193ea250bcef362c9bea85c028930dade6889
         restart: on-failure
         environment:
-            - COURSE_DB_URL=jdbc:mysql://course-service-db:3306/db_course?allowPublicKeyRetrieval=true&useSSL=false
+            - COURSE_DB_URL=jdbc:mysql://course-service-db:33061/db_course
             - EUREKA_SERVER_URL=http://discovery-server:8761/eureka
             - SPRING_RABBITMQ_HOST=rabbitmq
         expose:
@@ -67,6 +57,9 @@ services:
         depends_on:
             - eureka
             - rabbitmq
+            - course-service-db
+        links:
+            - course-service-db
 
     quiz:
         container_name: quiz

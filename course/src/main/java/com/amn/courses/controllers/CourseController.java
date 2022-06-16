@@ -52,22 +52,25 @@ public class CourseController {
         if(userRepository.findById(instructorId).isEmpty()){
             JSONObject entity = new JSONObject();
             entity.put("message","No instructor with that ID");
+            GrpcClient.log("Course", "Create", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
         Course n = new Course();
         n.setName(name);
         n.setInstructor(userRepository.findById(instructorId).get());
-        n.setDescription(json.get("description").asText());
+        if(json.get("description") != null) n.setDescription(json.get("description").asText());
 
         if(userRepository.findById(instructorId).isEmpty()){
             JSONObject entity = new JSONObject();
             entity.put("message","No instructor with that ID!");
-            return new ResponseEntity<Object>(entity,HttpStatus.OK);
+            GrpcClient.log("Course", "Create", "Fail");
+            return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
 
         courseRepository.save(n);
         JSONObject entity = new JSONObject();
         entity.put("message","Saved");
+        GrpcClient.log("Course", "Create", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
@@ -79,6 +82,7 @@ public class CourseController {
 
     @GetMapping(path="/{id}")
     public @ResponseBody Course getCourse(@PathVariable(value="id") Integer id) {
+        GrpcClient.log("Course", "Get single", "Success");
         return courseRepository.findById(id).get();
     }
 
@@ -88,6 +92,7 @@ public class CourseController {
         if(c == null){
             JSONObject entity = new JSONObject();
             entity.put("message","No course with that ID");
+            GrpcClient.log("Course", "Update", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
 
@@ -98,6 +103,7 @@ public class CourseController {
 
         courseRepository.save(c);
 
+        GrpcClient.log("Course", "Update", "Success");
         JSONObject entity = new JSONObject();
         entity.put("message","Updated");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
@@ -110,8 +116,10 @@ public class CourseController {
         QuizMessage quizMessage = new QuizMessage();
         quizMessage.setCourse_id(id);
         quizMessage.setSuccess(true);
-        var x = rabbitTemplate.convertSendAndReceive(RabbitConfig.EXCHANGE, RabbitConfig.ROUTING_KEY, quizMessage);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE, RabbitConfig.ROUTING_KEY, quizMessage);
         courseRepository.deleteById(id);
+
+        GrpcClient.log("Course", "Delete", "Success");
         JSONObject entity = new JSONObject();
         entity.put("message","Deleted");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
@@ -135,6 +143,7 @@ public class CourseController {
         if(u.isEmpty()){
             JSONObject entity = new JSONObject();
             entity.put("message","No user with that ID");
+            GrpcClient.log("Course", "Enroll", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
         user = u.get();
@@ -144,6 +153,7 @@ public class CourseController {
         if(c.isEmpty()){
             JSONObject entity = new JSONObject();
             entity.put("message","No course with that ID");
+            GrpcClient.log("Course", "Enroll", "Fail");
             return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
         }
         course = c.get();
@@ -151,6 +161,7 @@ public class CourseController {
             if(c1.equals(course)) {
                 JSONObject entity = new JSONObject();
                 entity.put("message","User is already enrolled");
+                GrpcClient.log("Course", "Enroll", "Fail");
                 return new ResponseEntity<Object>(entity,HttpStatus.BAD_REQUEST);
             }
         }
@@ -158,6 +169,7 @@ public class CourseController {
         userRepository.save(user);
         JSONObject entity = new JSONObject();
         entity.put("message","Enrolled");
+        GrpcClient.log("Course", "Enroll", "Success");
         return new ResponseEntity<Object>(entity,HttpStatus.OK);
     }
 
