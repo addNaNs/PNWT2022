@@ -44,3 +44,7 @@ objave naših korisnika, ali i odgovoriti ili postaviti novo pitanje - novu temu
 * Muhamed Opačin - mopacin1@etf.unsa.ba
 
 Link na projekat: [https://github.com/addNaNs/PNWT2020](https://github.com/addNaNs/PNWT2022.git)
+
+## Video aplikacije
+
+PNWT UI - [Video demo UI](https://etfunsa-my.sharepoint.com/:v:/g/personal/nahmetspah1_etf_unsa_ba/EXYqjHe2OCVMvjRFhWACK9ABc8ZxlJ_epZDtvLgvkJaYLQ?e=38CPiP)
