@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div class="inner">
+        <form action="" #addPostForm="ngForm" (ngSubmit)="onClickAddPostForm(addPostForm.value)">
+            <h3>Add post</h3>
+            <p>Here, please enter new post on our forum page. Let's connect students and share thoughts!</p>
+            <label class="form-group">
+                <input type="text" id="subject" name="subject" class="form-control" ngModel>
+                <span for="">Subject of your post is...</span>
+                <span class="border"></span>
+            </label>
+            <label class="form-group" >
+                <input type="text"id="message" name="message" class="form-control"  ngModel>
+                <span for="">Message of your post is...</span>
+                <span class="border"></span>
+            </label>
+            <button type="submit" value="submit">Submit 
+                <i class="zmdi zmdi-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+</div>

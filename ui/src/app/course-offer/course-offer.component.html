@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <a
+            [routerLink]="['/shopoffer', item.itemId]"
+            class="list-group-item clearfix"
+            *ngFor = "let item of courses"
+        >
+            <div class="pull-left col-xs-9">
+                <p class="list-group-item-text">{{item.itemId}}</p>
+                <br>
+                <h4 class="list-group-item-heading">{{item.name}}</h4>
+                <p class="list-group-item-text float-left">{{item.description}}</p>
+            </div>
+            <div class="pull-right col-xs-3">
+                <img src={{item.imagePath}} alt={{item.name}} class="image" style="max-height:50px;">
+            </div>
+        </a>
+    </div>
+</div>
+<br><br>
+<hr>
+<br>

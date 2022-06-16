@@ -1,0 +1,51 @@
+<br><br><br><br><br><br>
+<div class="class1">
+  <div class="container" >
+    <div class="row align-middle">
+      <div class="col-md-6 col-lg-4 column" *ngFor="let course of coursesList">
+        <div class="card gr-1">
+          <div class="txt">
+            <h1>{{ course.name }}</h1>
+            <p>{{ course.description }}</p>
+            <p>Instructor name: {{ course.instructor.name }}</p>
+          </div>
+          <a href="courses/{{course.id}}">more</a>
+          <div class="ico-card">
+          <i class="fa fa-rebel"></i>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="scp-quizzes-main text-center pb-5" *ngIf="signedIn">
+    <button class="btn btn-primary active col-lg-6 mx-auto text-center" type="submit" value="submit" (click)="postingNewCourse()">
+        Click here to post new course!
+    </button>
+    <div *ngIf="postingCourse">
+      <form action="" #addNewCourseForm="ngForm" (ngSubmit)="onClickAddNewCourseForm(addNewCourseForm.value)">
+        <br>
+        <h3>Add new course</h3>
+        <p>Below, please enter values for the new course:</p>
+        <label class="form-group">
+            <input type="text" id="courseName" name="courseName" class="form-control" ngModel>
+            <span for="">Name of the course is...</span>
+            <span class="border"></span>
+        </label>
+        <label class="form-group" >
+            <input type="text" id="description" name="description" class="form-control" ngModel>
+            <span for="">Description of the course is...</span>
+            <span class="border"></span>
+        </label>
+        <div class="text-center pb-5">
+          <button class="btn btn-primary active col-lg-3 mx-auto text-center" 
+          type="submit" value="submit">
+            Submit values
+        </button>
+        </div>
+
+    </form>
+
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<form #addQuizForm="ngForm" (ngSubmit)="onClickRadio(addQuizForm.value)">
+    <div class="scp-quizzes-main text-center pb-5" *ngFor="let question of questionsAll">
+        <div class="scp-quizzes-data col-lg-6 mx-auto">
+            <h3>{{ question.text }}?</h3>
+            <br/>
+            <input id="question1-{{question.id}}" type="radio" name="q-{{question.id}}" value="1" class="form-control" ngModel>
+            <label for="question1-{{question.id}}">{{ question.correctAnswer }}</label>
+            <input id="question2-{{question.id}}" type="radio"  name="q-{{question.id}}" value="-1" class="form-control" ngModel>
+            <label for="question2-{{question.id}}">{{ question.wrongAnswer3 }}</label><br/>
+            <input id="question3-{{question.id}}" type="radio" name="q-{{question.id}}" value="-2" class="form-control" ngModel>
+            <label for="question3-{{question.id}}">{{ question.wrongAnswer1 }}</label> <br/>
+            <input id="question4-{{question.id}}" type="radio" name="q-{{question.id}}" value="-3" class="form-control" ngModel>
+            <label for="question4-{{question.id}}">{{ question.wrongAnswer2 }}</label> 
+        </div>   
+    </div>
+    <div class="scp-quizzes-main text-center pb-5">
+        <button class="btn btn-primary active col-lg-3 mx-auto text-center" type="submit" value="submit">
+            Submit your answers 
+        </button>
+    </div>
+</form>
+
+
+

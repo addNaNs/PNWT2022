@@ -1,0 +1,39 @@
+    <h3 class="margin">
+        Hey dear user, here are the courses you are enrolled in:
+    </h3>
+<div class="container mt-2">
+      <div class="row">
+        <div class="col-md-3 col-sm-6"  *ngFor="let course of myCourses">
+          <div class="card card-block">
+          <h4 class="card-title text-right"><i class="material-icons">{{ course.id }}</i></h4>
+            <h5 class="card-title mt-3 mb-3">  Course name •    {{ course.name }}</h5>
+            <p class="card-text">Course instructor: {{ course.instructor.name }}.</p> 
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <header class="text-center pb-5">
+                        <h1 class="h2">For more courses please visit our courses page.</h1>
+                    </header>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                        <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                        <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                        <p class="mb-0 mt-2 font-italic"> “Live as if you were to die tomorrow. Learn as if you were to live forever.”
+                            <a href="/courses" class="text-info">And for enrolling courses on the platform, use courses button</a>."</p>
+                        <footer class="blockquote-footer pt-4 mt-4 border-top">Mahatma Gandhi
+                        </footer>
+                    </blockquote>
+    
+                </div>
+            </div>
+        </div>
+    </section>

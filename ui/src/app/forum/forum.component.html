@@ -1,0 +1,29 @@
+        <!-- Page Content-->
+        <div >
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="forum">
+                    <h1 class="font-weight-light">Welcome to the ELearning forum</h1>
+                    <p>On this page, you will be able to post your question/opinion or 
+                        give your feedback by clicking on the reply button.
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="row gx-4 gx-lg-5" > -->
+            <div  *ngFor="let course of coursesList">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ course.name }}</h2>
+                        <p class="card-text">
+                            Click on the button bellow to see forum for <b>{{ course.name }}</b>!
+                        </p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="/forum/{{course.id}}">
+                        Forum for this course
+                    </a></div>
+                </div>
+            </div>
+        </div>
+
+
+ 

@@ -1,0 +1,63 @@
+<section class="light">
+	<div class="container py-4">
+		<article class="postcard dark blue">
+			<a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="assets/images/learn.jpg" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title yellow"><a href="#">{{ course.name }}</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2022
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">
+                    {{ course.description }}
+                </div>
+                <div >
+                    Instructor name: {{ course.instructor.name }}
+                </div>
+                <br>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>Instructed by: {{ course.instructor.username }}</li>
+				</ul>
+                <button type="button" class="btn btn-primary" (click)="addToMyCourse()" *ngIf="!enrolledIn">
+                    Click here to enroll this course
+                  </button>
+			</div>
+		</article>
+	</div>
+</section>
+<br>
+<a class="ion ion-md-create" href="courses/{{courseId1}}/add-lesson">
+	+ Add new lesson
+  </a>
+<h3 class="margin">
+	Hey dear user, below are listed lessons for this course. 
+</h3>
+<div class="container col-11" *ngFor="let lesson of lessonsForCourse">
+	<div class="card">
+		<div class="card-header bg-light text-dark">
+			{{ lesson.name }}
+		</div>
+		<div class="card-body">
+			<a class="ion ion-md-create" href="/{{courseId1}}/{{lesson.id}}">
+				Click here to see the lecture <b>{{ lesson.name }}</b>!
+			</a>
+		</div>
+	</div>
+</div>
+<h5 class="margin">
+	In case that you want to test your knowledge, click on <b><i>Play quiz button</i></b> and see your score!
+</h5>
+<div class="container col-9" *ngFor="let quiz of quizes">
+	<div class="card">
+		<div class="card-header bg-light text-dark">
+			<b>{{ quiz.title }}</b>
+		</div>
+		<a class="btn btn-primary active" role="button" aria-pressed="true" href="quiz/{{courseId1}}/{{quiz.id}}">
+			Play quiz
+		</a>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container" style="margin-top: 5%">
+    <div class="col-md-6 col-md-offset-3">     
+        <div class="row">
+            <div id="swimba" class="text-center">
+                <h1>ELearning</h1>
+                <p>Welcome to the first efficient platform that is going to help you in your studies.</p>
+            </div>
+            <br>
+            <form role="form" id="form-buscar"#userName="ngForm" (ngSubmit)="onSubmit(userName.value)">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="1" class="form-control input-lg" type="text" name="search" placeholder="Search an item..." required ngModel/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+                                </button>
+                            </span>
+                    </div>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>

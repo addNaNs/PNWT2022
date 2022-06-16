@@ -1,0 +1,64 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark color">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"
+               routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="/">        
+                    <app-elearning-logo></app-elearning-logo>
+                    <span class="sr-only"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <nav class="navbar navbar-expand-lg navbar-dark color">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/">Home <span class="sr-only"></span></a>
+                              </li>
+                            <li class="nav-item">
+                              <a class="nav-link" routerLink="/courses">Courses </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" routerLink="/professors-assistants">Professors and assistants</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" routerLink="/about">About</a>
+                            </li>
+                            <li class="nav-item" *ngIf="loggedIn">
+                              <a class="nav-link" routerLink="/my-courses">My courses</a>
+                            </li>
+                            <li class="nav-item" *ngIf="loggedIn">
+                              <a class="nav-link" routerLink="/forum">Forum</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                      
+                <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+
+        <div class="float-right beautify">
+          <div class="btn-group" role="group" *ngIf="user.name.length==0">
+              <a class="btn btn-primary register-image registerButton" role="button" routerLink="/register">Register</a>
+              <a class="btn btn-primary signIn-image signInButton" role="button" routerLink="/sigIn">Sign In</a>
+          </div>
+        
+          <div class="btn-group" role="group" *ngIf="user.name.length!=0">
+            <h4 style='color: white;'>Hello {{user.name}}</h4>
+            <a class="btn btn-primary" (click)="logout()">Logout</a>
+        </div>
+        </div>
+  </div>
+</nav>
+<hr>
+<router-outlet></router-outlet>
+</div>
+<div>
+  <br>
+  <app-footer></app-footer>
+</div>
+

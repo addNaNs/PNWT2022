@@ -1,0 +1,51 @@
+.register-image:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+.registerButton:before{
+     background-image : url(https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/32/user-add-icon.png);
+}
+.signIn-image:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+.signInButton:before{
+     background-image : url(https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/32/user-icon.png);
+}
+
+.color{
+    background-color:#282d32;
+}
+
+.beautify{
+    padding-top: 15px;
+}
+.ll-hero {
+    background: linear-gradient(180deg, #7394b5 40%, rgba(115, 181, 141, 0) 100%);
+    padding: 200px 0 100px;
+    position: relative;
+  }
+  ::ng-deep #home_hero__particles {
+    width: 100%;
+    height: 100%;
+  }
+  
+.active{
+    background: 'pink'
+}
