@@ -10,7 +10,6 @@ da potraže lekcije i kvizove, baš kao što je to slučaj na Udemy stranici, al
 U sklopu našeg projekta koristili smo:
 * [Angular](https://angular.io/)
 * [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [MySQL](https://www.mysql.com/)
 * 
