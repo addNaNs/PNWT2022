@@ -12,7 +12,7 @@ U sklopu našeg projekta koristili smo:
 * [Bootstrap](https://getbootstrap.com)
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [MySQL](https://www.mysql.com/)
-* 
+
 Projekat je generisan uz pomoć [Angular CLI](https://github.com/angular/angular-cli) verzije 11.2.6.
 
 
