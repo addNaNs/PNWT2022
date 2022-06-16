@@ -48,3 +48,6 @@ Link na projekat: [https://github.com/addNaNs/PNWT2020](https://github.com/addNa
 
 PNWT UI - [Video demo UI](https://etfunsa-my.sharepoint.com/:v:/g/personal/nahmetspah1_etf_unsa_ba/EXYqjHe2OCVMvjRFhWACK9ABc8ZxlJ_epZDtvLgvkJaYLQ?e=38CPiP)
 PNWT backend - [Video demo Backend](https://etfunsa-my.sharepoint.com/:v:/g/personal/asabanovic7_etf_unsa_ba/EVQ7iXH6NdpHnxtNabgXHxMBeJ2yqVxLaFYW-kUn4knHrA?e=R4VTUG)
+
+## Dokumentacija
+PNWT-2022 - [PNWT-Team1-Documentation](https://docs.google.com/document/d/1gu3xENOmt5XD2ADmWRxdFO4Z3T8A70zF/edit?usp=sharing&ouid=109471908469528622511&rtpof=true&sd=true)
